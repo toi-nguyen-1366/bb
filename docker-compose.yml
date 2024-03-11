@@ -1,7 +1,7 @@
 version: '3'
 services:
   app_new_php:
-    container_name: app_new_php
+    container_name: app_new_php_cc
     build:
       context: ./
       dockerfile: Dockerfile
@@ -19,8 +19,8 @@ services:
     - .docker/nginx/conf.d/:/etc/nginx/conf.d/
     - .docker/nginx/cache/:/etc/nginx/cache/
     ports:
-    - "8787:80"
-    - "7343:433"
+    - "8711:80"
+    - "7344:433"
     networks:
       - app-network
 
