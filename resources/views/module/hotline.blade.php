@@ -1,0 +1,4 @@
+<a href="tel:{!!$site["so-hotline"]!!}" class="btn text-light btn-pinterest btn-hotline-noi hidden-xs @if(!empty($site["so-hotline-2"])) btn-hotline-noi-1 @endif btn-action  wow pulse" data-wow-iteration="100000" data-wow-duration="0.3s data-action="Khách hàng bấm nút hotline" style="background: #000066;"><span>hotline 24/7</span><span>{!!$site["so-hotline"]!!}</span></a>
+@if(!empty($site["so-hotline-2"]))
+<a href="tel:{!!$site["so-hotline-2"]!!}" class="btn text-light btn-hotline-noi btn-hotline-noi-2 btn-action" data-action="Khách hàng bấm nút hotline 2"><span>HOTLINE</span><span>{!!$site["so-hotline-2"]!!}</span></a>
+@endif

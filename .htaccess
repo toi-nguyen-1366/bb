@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    RewriteCond %{REQUEST_URI} !(\.mp3|\.mp4|\.php|\.html|\.ashx|\.css|\.js|\.png|\.jpeg|\.jpg|\.gif|\.pdf|\.doc|\.xls|\.ppt|\.docx|\.xlsx|\.pptx|\.woff|\.woff2|\.ttf|\.otf|robots\.txt)$ [NC]
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(backend|filemanager|upload|thumbs|frontend)/(.*)$ public/$1/$2 [L,NC]
+    RewriteRule ^(encrypt.php)$ public/$1 [L,NC]
+</IfModule>
+
+Options -Indexes
